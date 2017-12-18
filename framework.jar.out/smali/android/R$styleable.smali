@@ -6049,6 +6049,8 @@
 
     sput-object v0, Landroid/R$styleable;->ShapeDrawablePadding:[I
 
+    invoke-static {}, Landroid/R$styleable;->initFlymeExtraFields()V
+
     new-array v0, v3, [I
 
     const v1, #android:attr@slideEdge#t

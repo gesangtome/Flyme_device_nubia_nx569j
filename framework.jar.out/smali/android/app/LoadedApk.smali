@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/app/LoadedApk$FlymeInjector;,
         Landroid/app/LoadedApk$1;,
         Landroid/app/LoadedApk$ServiceDispatcher;,
         Landroid/app/LoadedApk$ReceiverDispatcher;,
@@ -3014,6 +3015,8 @@
     invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     iput-object v1, p0, Landroid/app/LoadedApk;->mApplication:Landroid/app/Application;
+
+    invoke-static {}, Landroid/app/LoadedApk$FlymeInjector;->cleanFlymeTypeface()V
 
     if-eqz p2, :cond_6
 

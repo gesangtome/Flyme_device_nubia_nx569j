@@ -2116,6 +2116,8 @@
     .local v5, "stripped":Landroid/app/Notification;
     invoke-static {v5}, Landroid/app/Notification$Builder;->stripForDelivery(Landroid/app/Notification;)V
 
+    invoke-direct {p0, v5}, Landroid/app/NotificationManager;->fixedFlymeFontColor(Landroid/app/Notification;)V
+
     .line 287
     :try_start_0
     iget-object v2, p0, Landroid/app/NotificationManager;->mContext:Landroid/content/Context;

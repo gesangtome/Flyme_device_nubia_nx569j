@@ -299,6 +299,18 @@
     :cond_3
     and-int/lit8 v1, p1, 0x1
 
+    invoke-static {}, Landroid/os/BuildExt;->isProductInternational()Z
+
+    move-result v1
+
+    if-nez v1, :cond_10
+    
+    invoke-static {p0, v0}, Landroid/text/util/Linkify;->flymeGatherLinks(Landroid/text/Spannable;Ljava/util/ArrayList;)V
+
+    goto :goto_3
+
+    :cond_10
+
     if-eqz v1, :cond_4
 
     sget-object v2, Landroid/util/Patterns;->WEB_URL:Ljava/util/regex/Pattern;
@@ -334,6 +346,7 @@
     invoke-static/range {v0 .. v5}, Landroid/text/util/Linkify;->gatherLinks(Ljava/util/ArrayList;Landroid/text/Spannable;Ljava/util/regex/Pattern;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
     :cond_4
+    :goto_3
     and-int/lit8 v1, p1, 0x2
 
     if-eqz v1, :cond_5
@@ -373,6 +386,9 @@
     invoke-static {v0, p0}, Landroid/text/util/Linkify;->gatherMapLinks(Ljava/util/ArrayList;Landroid/text/Spannable;)V
 
     :cond_7
+
+    invoke-static {p0, p1, v0}, Landroid/text/util/Linkify;->flymeGatherLinksDateTime(Landroid/text/Spannable;ILjava/util/ArrayList;)V
+
     invoke-static {v0}, Landroid/text/util/Linkify;->pruneOverlaps(Ljava/util/ArrayList;)V
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I

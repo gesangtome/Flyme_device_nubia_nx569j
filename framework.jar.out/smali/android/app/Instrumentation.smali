@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/app/Instrumentation$FlymeRecommendActivity;,
         Landroid/app/Instrumentation$1;,
         Landroid/app/Instrumentation$Idler;,
         Landroid/app/Instrumentation$ActivityGoing;,

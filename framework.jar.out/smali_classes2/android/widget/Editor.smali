@@ -6,6 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/Editor$OptionWrapper;,
+        Landroid/widget/Editor$FlymeInjector;,
+        Landroid/widget/Editor$FlymeStartSelectionActionModeRunnable;,
+        Landroid/widget/Editor$FlymeShowSuggestionsRunnable;,
+        Landroid/widget/Editor$FlymeInsertionPointCursorController;,
         Landroid/widget/Editor$ProcessTextIntentActionsHandler;,
         Landroid/widget/Editor$EditOperation;,
         Landroid/widget/Editor$UndoInputFilter;,
@@ -8295,6 +8300,9 @@
     iput-object v8, p0, Landroid/widget/Editor;->mMagnifierController:Lnubia/widget/TextMagnifierController;
 
     :cond_4
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->updateBackground(Landroid/widget/Editor;)V
+
     return-void
 
     .end local v0    # "enabled":Z
@@ -9118,6 +9126,8 @@
     invoke-virtual {v0}, Landroid/view/ActionMode;->finish()V
 
     :cond_0
+    invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->hideSelectionModifierCursorController(Landroid/widget/Editor;)V
+
     invoke-virtual {p0}, Landroid/widget/Editor;->stopTextSelectionMode()V
 
     return-void

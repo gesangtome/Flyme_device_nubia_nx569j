@@ -1461,6 +1461,19 @@
     .param p7, "animate"    # Z
 
     .prologue
+
+    move-object/from16 v1, p0
+
+    move-object/from16 v2, p1
+
+    iget-object v0, v1, Lcom/android/internal/policy/PhoneWindow$DecorView;->this$0:Lcom/android/internal/policy/PhoneWindow;
+
+    move/from16 v3, p4
+
+    invoke-static {v1, v2, v0, v3}, Lcom/android/internal/policy/PhoneWindow$FlymeInjector;->flymeGetDisplayMetricsHeight(Lcom/android/internal/policy/PhoneWindow$DecorView;Lcom/android/internal/policy/PhoneWindow$ColorViewState;Lcom/android/internal/policy/PhoneWindow;I)I
+
+    move-result p4
+
     if-lez p4, :cond_6
 
     move-object/from16 v0, p1
@@ -3488,6 +3501,18 @@
 
     .restart local v2    # "handled":Z
     :goto_2
+    invoke-static/range {p0 .. p1}, Lcom/android/internal/policy/PhoneWindow$FlymeInjector;->flymeDispatchKeyEvent(Lcom/android/internal/policy/PhoneWindow$DecorView;Landroid/view/KeyEvent;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_7
+
+    const/4 v6, 0x1
+
+    return v6
+
+    :cond_7
+
     if-nez v2, :cond_0
 
     .end local v1    # "cb":Landroid/view/Window$Callback;

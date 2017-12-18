@@ -666,6 +666,9 @@
     invoke-virtual {v0, v1}, Landroid/widget/Editor$InsertionPointCursorController;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     :cond_2
+
+    invoke-direct/range {p0 .. p1}, Landroid/widget/Editor$SelectionModifierCursorController;->flymeTouchEvent(Landroid/view/MotionEvent;)V
+
     return-void
 
     .end local v14    # "handle":Z

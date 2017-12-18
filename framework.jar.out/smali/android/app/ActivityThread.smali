@@ -6,6 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/app/ActivityThread$FlymeApplicationThread;,
+        Landroid/app/ActivityThread$FlymeInjector;,
         Landroid/app/ActivityThread$SensorEventData;,
         Landroid/app/ActivityThread$DropBoxReporter;,
         Landroid/app/ActivityThread$EventLoggingReporter;,
@@ -387,7 +389,7 @@
 
     new-instance v0, Landroid/app/ActivityThread$FlymeApplicationThread;
 
-    invoke-direct {v0, p0, v2}, Landroid/app/ActivityThread$ApplicationThread;-><init>(Landroid/app/ActivityThread;Landroid/app/ActivityThread$1;)V
+    invoke-direct {v0, p0}, Landroid/app/ActivityThread$FlymeApplicationThread;-><init>(Landroid/app/ActivityThread;)V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mAppThread:Landroid/app/ActivityThread$ApplicationThread;
 
@@ -9459,6 +9461,8 @@
     .param p5, "dontReport"    # Z
 
     .prologue
+    invoke-static/range {p0 .. p0}, Landroid/app/ActivityThread$FlymeInjector;->handleFlymePauseActivity(Landroid/app/ActivityThread;)V
+
     iget-object v1, p0, Landroid/app/ActivityThread;->mActivities:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -9660,6 +9664,16 @@
 
     invoke-virtual {v15, v0}, Landroid/content/BroadcastReceiver;->setPendingResult(Landroid/content/BroadcastReceiver$PendingResult;)V
 
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v14}, Landroid/app/ActivityThread$FlymeInjector;->isFlymePermissionGranted(Landroid/app/ActivityThread$ReceiverData;Landroid/app/LoadedApk;)Z
+
+    move-object/from16 v1, v18
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v16
@@ -9752,6 +9766,7 @@
     move-result-object v19
 
     invoke-static/range {v18 .. v19}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :cond_3
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0

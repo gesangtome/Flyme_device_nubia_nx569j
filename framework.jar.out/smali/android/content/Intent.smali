@@ -10,6 +10,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/content/Intent$FlymeInjector;,
         Landroid/content/Intent$FilterComparison;,
         Landroid/content/Intent$ShortcutIconResource;
     }
@@ -953,6 +954,9 @@
 
     .line 4414
     :cond_6
+
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;Landroid/content/Intent;)V
+
     return-void
 .end method
 
@@ -1030,6 +1034,9 @@
 
     .line 4436
     :cond_1
+
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+
     return-void
 .end method
 
@@ -5400,6 +5407,8 @@
 
     .line 7529
     :cond_14
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->copyMeizuFlag(Landroid/content/Intent;Landroid/content/Intent;)V
+
     return v0
 
     .line 7489
@@ -9066,6 +9075,8 @@
 
     iput-object v2, p0, Landroid/content/Intent;->mSmartShowExtras:Landroid/os/Bundle;
 
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->readIntentExt(Landroid/content/Intent;Landroid/os/Parcel;)V
+
     return-void
 .end method
 
@@ -10972,6 +10983,8 @@
     iget-object v2, p0, Landroid/content/Intent;->mSmartShowExtras:Landroid/os/Bundle;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
+
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->writeIntentExt(Landroid/content/Intent;Landroid/os/Parcel;)V
 
     return-void
 

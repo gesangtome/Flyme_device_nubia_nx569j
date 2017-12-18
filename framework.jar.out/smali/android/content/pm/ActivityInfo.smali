@@ -6,6 +6,14 @@
 .implements Landroid/os/Parcelable;
 
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/content/pm/ActivityInfo$FlymeInjector;,
+        Landroid/content/pm/ActivityInfo$1;
+    }
+.end annotation
+
+
 # static fields
 
 .field public static final CONFIG_THEME:I = 0x4000

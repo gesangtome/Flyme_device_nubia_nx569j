@@ -320,6 +320,19 @@
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
+
+    invoke-direct/range {p0 .. p1}, Landroid/widget/PopupWindow$PopupDecorView;->onFlymeTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_3
+
     const/4 v2, 0x1
 
     .line 2049

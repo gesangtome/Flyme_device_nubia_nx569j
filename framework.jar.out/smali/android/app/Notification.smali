@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/app/Notification$FlymeInjector;,
         Landroid/app/Notification$BuilderRemoteViews;,
         Landroid/app/Notification$CarExtender;,
         Landroid/app/Notification$WearableExtender;,

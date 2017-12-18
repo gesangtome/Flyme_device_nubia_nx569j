@@ -6453,6 +6453,8 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->ShapeDrawablePadding:[I
 
+    invoke-static {}, Lcom/android/internal/R$styleable;->initFlymeExtraFields()V
+
     new-array v0, v3, [I
 
     const v1, #android:attr@slideEdge#t

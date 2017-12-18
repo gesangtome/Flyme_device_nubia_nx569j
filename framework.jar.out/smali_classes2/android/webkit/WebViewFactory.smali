@@ -764,7 +764,7 @@
     .restart local v3    # "uid":I
     if-eqz v3, :cond_1
 
-    goto :goto_flyme_0
+    goto :goto_2
 
     const/16 v4, 0x3e8
 
@@ -792,9 +792,12 @@
 
     .line 156
     :cond_2
-    const-wide/16 v6, 0x10
+    :goto_2
 
     :try_start_1
+
+    const-wide/16 v6, 0x10
+
     const-string v4, "WebViewFactory.getProvider()"
 
     invoke-static {v6, v7, v4}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V

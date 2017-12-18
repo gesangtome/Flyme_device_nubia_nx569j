@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/content/res/Resources$FlymeInjector;,
         Landroid/content/res/Resources$ThemeKey;,
         Landroid/content/res/Resources$Theme;,
         Landroid/content/res/Resources$NotFoundException;
@@ -995,6 +996,8 @@
     move-result-object v0
 
     sput-object v0, Landroid/content/res/Resources;->mSystem:Landroid/content/res/Resources;
+
+    invoke-static {}, Landroid/content/res/Resources$FlymeInjector;->setFlymeSystemThemeResource()V
 
     :cond_0
     monitor-exit v2

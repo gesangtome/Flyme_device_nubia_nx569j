@@ -12,6 +12,7 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/TextView$FlymeInjector;,
         Landroid/widget/TextView$4;,
         Landroid/widget/TextView$ChangeWatcher;,
         Landroid/widget/TextView$Marquee;,
@@ -25,6 +26,20 @@
 
 
 # static fields
+.field mFlymeAutoLinkMaskIncludeDateTime:Z
+
+.field private mFlymeCurrentCursorVisible:Z
+
+.field mFlymeCursorWidth:I
+
+.field mFlymeInputShownChangeListener:Landroid/view/inputmethod/InputMethodManager$InputShownChangeListener;
+
+.field mFlymeTempCoords:[I
+
+.field mFlymeTouching:Z
+
+.field private mTempCurosrRect:Landroid/graphics/Rect;
+
 .field static final ACCESSIBILITY_ACTION_PROCESS_TEXT_START_ID:I = 0x10000100
 
 .field private static final ACCESSIBILITY_ACTION_SHARE:I = 0x10000000
@@ -3076,6 +3091,9 @@
 
     .line 1382
     :cond_d
+
+    invoke-static/range {p0 .. p1}, Landroid/widget/TextView$FlymeInjector;->initFlymeExtraFields(Landroid/widget/TextView;Landroid/content/Context;)V
+
     if-nez v50, :cond_e
 
     if-nez v51, :cond_e
@@ -24768,9 +24786,20 @@
     :cond_0
     sparse-switch p1, :sswitch_data_0
 
+    invoke-static/range {p0 .. p1}, Landroid/widget/TextView$FlymeInjector;->mzOnTextContextMenuItem(Landroid/widget/TextView;I)Z
+
+    move-result v7
+
+    if-nez v7, :cond_3
+
+    const/4 v7, 0x1
+
+    return v7
+
     move v6, v5
 
     :cond_1
+    :cond_3
     :goto_0
     return v6
 

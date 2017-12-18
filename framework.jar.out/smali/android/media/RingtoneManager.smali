@@ -357,6 +357,12 @@
     .param p1, "type"    # I
 
     .prologue
+    invoke-static/range {p0 .. p1}, Landroid/media/MzRingtoneManager;->getActualDefaultRingtoneUri(Landroid/content/Context;I)Landroid/net/Uri;
+
+    move-result-object v0
+
+    return-object v0
+
     const/4 v0, 0x0
 
     .line 637
@@ -1489,15 +1495,17 @@
 
     move-result-object v1
 
-    :goto_1
+    :goto_flyme_1
     invoke-static {v2, v0, v1}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+
+    invoke-static/range {p0 .. p2}, Landroid/media/RingtoneManager;->setFlymeActualDefaultRingtoneUri(Landroid/content/Context;ILandroid/net/Uri;)V
 
     goto :goto_0
 
     :cond_1
     const/4 v1, 0x0
 
-    goto :goto_1
+    goto :goto_flyme_1
 .end method
 
 .method public static setActualRingtoneUriBySubId(Landroid/content/Context;ILandroid/net/Uri;)V

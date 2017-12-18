@@ -14,6 +14,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/app/Activity$FlymeInjector;,
         Landroid/app/Activity$1;,
         Landroid/app/Activity$HostCallbacks;,
         Landroid/app/Activity$TranslucentConversionListener;,
@@ -73,6 +74,12 @@
 
 
 # instance fields
+.field mFlymeAccessControlManager:Lmeizu/security/AccessControlManager;
+
+.field mFlymeActionBarToTop:Z
+
+.field mFlymeTintBarInject:Landroid/app/Activity$FlymeInjector$TintBarInject;
+
 .field private intentForCheck:Landroid/content/Intent;
 
 .field mActionBar:Landroid/app/ActionBar;

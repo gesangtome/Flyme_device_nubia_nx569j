@@ -6,6 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/view/inputmethod/InputMethodManager$InputShownChangeListener;,
+        Landroid/view/inputmethod/InputMethodManager$FlymeInjector;,
         Landroid/view/inputmethod/InputMethodManager$PendingEvent;,
         Landroid/view/inputmethod/InputMethodManager$ImeInputEventSender;,
         Landroid/view/inputmethod/InputMethodManager$FinishedInputEventCallback;,

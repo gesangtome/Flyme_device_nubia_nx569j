@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/internal/policy/PhoneWindow$FlymeInjector;,
         Lcom/android/internal/policy/PhoneWindow$ColorViewState;,
         Lcom/android/internal/policy/PhoneWindow$DialogMenuCallback;,
         Lcom/android/internal/policy/PhoneWindow$RotationWatcher;,
@@ -10747,60 +10748,38 @@
 .end method
 
 .method public setStatusBarColor(I)V
-    .locals 4
+    .locals 3
     .param p1, "color"    # I
 
     .prologue
-    iput p1, p0, Lcom/android/internal/policy/PhoneWindow;->mStatusBarColor:I
 
-    const-string v0, ""
+    invoke-static/range {p0 .. p1}, Lcom/android/internal/policy/PhoneWindow$FlymeInjector;->flymeOnStatusBarColorChange(Lcom/android/internal/policy/PhoneWindow;I)I
 
-    .local v0, "packageName":Ljava/lang/String;
-    invoke-virtual {p0}, Lcom/android/internal/policy/PhoneWindow;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 5168
-    const-string v1, "com.sina.weibo"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 5169
-    const v1, -0x39b5b5b6
-
-    iput v1, p0, Lcom/android/internal/policy/PhoneWindow;->mStatusBarColor:I
-
-    .line 5172
-    :cond_0
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lcom/android/internal/policy/PhoneWindow;->mForcedStatusBarColor:Z
-
-    .line 5173
-    iget-object v1, p0, Lcom/android/internal/policy/PhoneWindow;->mDecor:Lcom/android/internal/policy/PhoneWindow$DecorView;
-
-    if-eqz v1, :cond_1
-
-    .line 5174
-    iget-object v1, p0, Lcom/android/internal/policy/PhoneWindow;->mDecor:Lcom/android/internal/policy/PhoneWindow$DecorView;
+    move-result p1
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    iput p1, p0, Lcom/android/internal/policy/PhoneWindow;->mStatusBarColor:I
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/internal/policy/PhoneWindow;->mForcedStatusBarColor:Z
+
+    .line 5173
+    iget-object v0, p0, Lcom/android/internal/policy/PhoneWindow;->mDecor:Lcom/android/internal/policy/PhoneWindow$DecorView;
+
+    if-eqz v0, :cond_0
+
+    .line 5174
+    iget-object v0, p0, Lcom/android/internal/policy/PhoneWindow;->mDecor:Lcom/android/internal/policy/PhoneWindow$DecorView;
+
+    const/4 v1, 0x0
 
     # invokes: Lcom/android/internal/policy/PhoneWindow$DecorView;->updateColorViews(Landroid/view/WindowInsets;Z)Landroid/view/WindowInsets;
     invoke-static {v1, v2, v3}, Lcom/android/internal/policy/PhoneWindow$DecorView;->access$3300(Lcom/android/internal/policy/PhoneWindow$DecorView;Landroid/view/WindowInsets;Z)Landroid/view/WindowInsets;
 
     .line 5176
-    :cond_1
+    :cond_0
     return-void
 .end method
 
