@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<policy>
+    <!-- for per user permission settings -->
+    <reserved-package name="com.google.android.packageinstaller" />
+    <reserved-package name="com.android.packageinstaller" />
+    <reserved-package name="com.android.settings" />
+    <reserved-package name="com.android.systemui" />
+    <reserved-package name="system" />
+    <reserved-package name="android" />
+    <reserved-package name="com.android.keychain" />
+</policy>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LucidPowerLevels>
+    <BatteryLevelThreshold>
+      <normal_save>99</normal_save>
+      <high_save>20</high_save>
+      <ultra_save>5</ultra_save>
+    </BatteryLevelThreshold>
+    <BatteryTempThreshold>
+      <normal_save>99</normal_save>
+      <high_save>99</high_save>
+      <ultra_save>99</ultra_save>
+    </BatteryTempThreshold>
+    <CpuTempThreshold>
+      <normal_save>99</normal_save>
+      <high_save>99</high_save>
+      <ultra_save>99</ultra_save>
+    </CpuTempThreshold>
+</LucidPowerLevels>

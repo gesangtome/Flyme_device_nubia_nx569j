@@ -1,0 +1,27 @@
+
+#Nubia add start, for woodpeckerd
+service woodpeckerd /system/bin/woodpeckerd
+    class main
+    socket woodpeckerd stream 0666 root system
+    seclabel u:r:woodpeckerd:s0
+on property:sys.nblog.control=on
+    start woodpeckerd
+#Nubia add end
+
+
+# nubia add for flycow
+service flycow /system/bin/flycow
+    class main
+    socket flycow stream 666 system system
+#nubia END
+
+
+#Nubia add for freezer
+service freezerd /system/bin/freezerd
+    class main
+    user root
+    group root
+
+on property:ro.nubia.freezemanager.enable=1
+    start freezerd
+#Nubia add end

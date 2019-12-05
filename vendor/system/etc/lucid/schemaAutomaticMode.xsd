@@ -1,0 +1,28 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:element name="LucidPowerLevels" type="LucidPowerLevelsType" />
+
+<xsd:complexType name="LucidPowerLevelsType">
+	<xsd:all>
+		<xsd:element name="BatteryLevelThreshold" type="thresholdType" />
+		<xsd:element name="BatteryTempThreshold" type="thresholdType" minOccurs="0" maxOccurs="1"/>
+		<xsd:element name="CpuTempThreshold" type="thresholdType" minOccurs="0" maxOccurs="1"/>
+	</xsd:all>
+</xsd:complexType>
+
+<xsd:complexType name="thresholdType">
+	<xsd:all>
+		<xsd:element name="normal_save" type="singleThresholdType"/>
+		<xsd:element name="high_save" type="singleThresholdType"/>
+		<xsd:element name="ultra_save" type="singleThresholdType"/>
+	</xsd:all>
+</xsd:complexType>
+
+<xsd:simpleType name="singleThresholdType">
+	<xsd:restriction base="xsd:integer">
+		<xsd:minInclusive value="0"/>
+		<xsd:maxInclusive value="100"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+</xsd:schema>

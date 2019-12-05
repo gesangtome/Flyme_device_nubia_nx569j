@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+
+<policy>
+    <inbox-package name="com.tencent.mobileqq" icon="qq.png" label="QQ"/>
+    <inbox-package name="com.sina.weibo" icon="weibo.png" label="微博"/>
+    <inbox-package name="com.taobao.taobao" icon="taobao.png" label="手机淘宝"/>
+    <inbox-package name="com.tencent.mm" icon="wechat.png" label="微信"/>
+</policy>

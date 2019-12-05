@@ -1,0 +1,500 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!--sample-->
+<powermo-setting>
+
+<global>
+    <product value="POWERMOREF"/> <!-- case sensitive -->
+    <acls-package-name value="com.powermo.smartshow.hack" />
+        <!-- when installed, use aclslist, otherwise defaultlist-->
+    <defaultlist value="hack-mode"/> <!-- case sensitive -->
+    <aclslist value="hack-mode" /> <!-- case sensitive -->
+    <split-bar-size value="10" />
+    <split-bar-overlap-size value="16" />
+    <split-bar-panel-size value="150" />
+    <floating-ime-enable value="0" />
+    <floating-ime-port-scale  value="0.8" />
+    <floating-ime-land-scale  value="0.6" />
+    <split-bar-color value="0xFF262626" />
+    <focused-frame-color value="0x000B83BF" />
+    <smallest-input-widget-size value="130" />
+    <!-- if value equals 'com.powermo.smartshow.activity/.idlerDisable'
+         system will not start idler
+    -->
+    <!-- idler activity on normal stack-->
+    <normal-idle-activity value="cn.nubia.minilauncher/com.android.launcher3.Launcher" />
+    <!-- idler activity on floating stack-->
+    <floating-idle-activity value="com.powermo.smartshow.activity/.MiniLauncherActivity" />
+    <draw-split-bar value="1" />
+    <!-- home key configuration, format:  config1:target1|config2:target2,
+         native for local display, tv for tv
+         default: do not remove slipt-screen and float stacks, just show home
+         exit: remove slipt-screen and float stacks and show home
+         exit-ignore-float: remove slipt-screen stacks and show home
+         two-stage-exit: show minilauncher on focused subscreen first time,
+                         if shown, remove slipt-screen and float stacks and show home
+         two-stage-exit-ignore-float: if focused is float, remove slipt-screen stacks and show home
+                         otherwise show minilauncher on focused subscreen first time,
+                         if shown, remove slipt-screen and show home
+    -->
+    <home-key-behavior value="three-stage-exit:native" />
+    <auto-keep-size-ratio value="0.5" />
+    <allow-camera-fullscreen value="1" />
+    <smartshow-animation-enable value="1" />
+    <smartshow-animation-level value="0x1F" />
+    <recent-activity value="com.android.systemui/.recentsview.nubiauiv3.RecentsActivity" />
+    <force-gpu-work value="1" />
+</global>
+
+<smartbar-POWERMOREF>
+    <config-with-shopm value="true" />
+    <style-shopm-bottom-bar-mode value="auto" /> <!-- auto/force-show/force-hide -->
+    <style-shopm-bottom-bar-auto-hide value="true" />
+
+    <style-entry-key value="back" /> <!-- back/menu -->
+
+    <style-mle-nosort value="false"/>
+    <style-cp-nohome value="false" />
+    <style-cp-nomove value="false" />
+    <style-cp-alignment value="edge" /> <!-- center/edge -->
+
+    <style-ml-dock-mode value="corner" /> <!-- corner/middle -->
+
+</smartbar-POWERMOREF>
+
+<!-- all apps in the "normal-mode" is white-list. -->
+<name-list name="normal-mode" type="white-list">
+    <item value="com.android.calculator2"/>
+    <item value="com.android.gallery3d"/>
+    <exception value="com.android.gallery3d/com.android.camera.CameraLauncher"/>
+</name-list>
+
+<!-- all apps in the "hack-mode" is black-list. -->
+<name-list name="hack-mode" type="black-list">
+    <item value="com.android.gallery3d/com.android.camera.CameraLauncher"/>
+    <item value="com.android.contacts/.activities.DialtactsActivity"/>
+    <item value="zte.android.flashlight"/>
+</name-list>
+
+<!-- all apps in the "keep-size" is white-list. -->
+<name-list name="keep-size" type="white-list">
+    <item value="cn.nubia.control"/>
+    <item value="cn.nubia.fmradio.preset"/>
+    <item value="cn.nubia.bleobj"/>
+    <item value="cn.nubia.calculator2.preset"/>
+    <item value="cn.nubia.deskclock.preset"/>
+    <item value="cn.nubia.calendar.preset"/>
+    <item value="cn.nubia.soundrecorder.preset"/>
+    <item value="cn.nubia.powermanage"/>
+    <item value="cn.nubia.security2"/>
+    <item value="cn.nubia.powersaving"/>
+    <item value="cn.nubia.harassintercept"/>
+    <item value="cn.nubia.antivirus"/>
+    <item value="cn.nubia.music.preset"/>
+    <item value="cn.nubia.wfd"/>
+    <item value="com.android.contacts"/>
+    <item value="cn.nubia.contacts" />
+    <item value="cn.nubia.weather"/>
+    <item value="cn.nubia.databackup"/>
+    <item value="cn.nubia.neoshare/.PermissionConfirmActivity"/>
+    <item value="cn.nubia.neoshare/.login.AppStartActivity"/>
+    <item value="cn.nubia.neostore/.ui.start.GuidePageActivity"/>
+    <item value="cn.nubia.nubiashop/.welcome.WelcomeActivity"/>
+    <item value="cn.nubia.phonemanualintegrate.preset"/>
+    <item value="cn.nubia.systemupdate"/>
+    <item value="cn.nubia.deskclock.preset"/>
+    <item value="cn.nubia.processmanager"/>
+    <item value="com.yulore.framework"/>
+    <item value="com.halfbrick.fruitninja"/>
+    <item value="cn.nubia.bootanimationinfo"/>
+    <item value="com.android.server.telecom/.components.UserCallActivity"/>
+    <item value="com.tencent.qqlive"/>
+    <item value="cn.nubia.thememanager"/>
+    <item value="cn.jj"/>
+    <item value="com.qqgame.mic"/>
+    <item value="com.tencent.tmgp.cf"/>
+    <item value="cn.nubia.sensor"/>
+    <item value="cn.nubia.email"/>
+</name-list>
+
+<!-- all apps in the "best-fit" is white-list. -->
+<name-list name="best-fit" type="white-list">
+        <item value="com.powermo.smartshow.activity/.MiniLauncherActivity"/>
+        <item value="cn.nubia.minilauncher/com.android.launcher3.Launcher"/>
+        <item value="cn.nubia.splitscreen.home"/>
+        <item value="com.android.mms" />
+        <item value="com.android.browser" />
+        <item value="com.android.email" />
+        <item value="com.renren.mobile.android" />
+        <item value="cn.nubia.gallery3d"/>
+        <item value="im.yixin" />
+        <item value="com.yx" />
+        <item value="com.tencent.mm" />
+        <item value="com.tencent.mobileqq" />
+        <item value="com.qzone" />
+        <item value="com.sina.weibo" />
+        <item value="com.immomo.momo" />
+        <item value="com.duowan.mobile" />
+        <item value="ctrip.android.view" />
+        <item value="com.Qunar" />
+        <item value="com.MobileTicket" />
+        <item value="com.nuomi" />
+        <item value="com.achievo.vipshop" />
+        <item value="com.jm.android.jumei" />
+        <item value="com.dianping.v1" />
+        <item value="com.taobao.apad" />
+        <item value="com.sankuai.meituan" />
+        <item value="com.tmall.wireless" />
+        <item value="com.taobao.taobao" />
+        <item value="com.youku.phone" />
+        <item value="com.netease.vopen" />
+        <item value="com.hunantv.imgo.activity" />
+        <item value="com.baidu.video" />
+        <item value="com.tudou.android" />
+        <item value="com.sohu.sohuvideo" />
+        <item value="com.tencent.qqlive" />
+        <item value="com.android.calculator2" />
+        <item value="com.android.calendar" />
+        <item value="com.wumii.android.mimi" />
+        <item value="com.baidu.searchbox" />
+        <item value="com.baidu.searchbox.pad" />
+        <item value="sogou.mobile.explorer" />
+        <item value="com.android.chrome" />
+        <item value="com.hunantv.imgo.activity" />
+        <!--携程旅行-->
+        <item value="ctrip.android.view" />
+        <!--春秋旅游-->
+        <item value="com.china3s.strip" />
+        <!--阿里旅行-->
+        <item value="com.taobao.trip" />
+        <!--蚂蚁短租-->
+        <item value="com.mayi.android.shortrent" />
+        <!--去哪儿旅行-->
+        <item value="com.Qunar" />
+        <!--支付宝-->
+        <item value="com.eg.android.AlipayGphone" />
+        <!--翼支付-->
+        <item value="com.chinatelecom.bestpayclient" />
+        <!--同花顺-->
+        <item value="com.hexin.plat.android" />
+        <!--中国银行-->
+        <item value="com.chinamworld.bocmbci" />
+        <!--中国工商银行-->
+        <item value="com.icbc" />
+        <!--农行掌上银行-->
+        <item value="com.android.bankabc" />
+        <!--招商银行-->
+        <item value="cmb.pb" />
+        <!--优酷视频-->
+        <item value="com.youku.phone" />
+        <!--暴风影音-->
+        <item value="com.storm.smart" />
+        <!--爱奇艺-->
+        <item value="com.qiyi.video" />
+        <!--芒果TV-->
+        <item value="com.hunantv.imgo.activity" />
+        <!--美拍-->
+        <item value="com.meitu.meipaimv" />
+        <!--淘宝-->
+        <item value="com.taobao.taobao" />
+        <!--1号店-->
+        <item value="com.thestore.main" />
+        <!--卷皮-->
+        <item value="com.juanpi.ui" />
+        <!--美丽说-->
+        <item value="com.meilishuo" />
+        <!--唯品会-->
+        <item value="com.achievo.vipshop" />
+        <!--京东-->
+        <item value="com.jingdong.app.mall" />
+        <!--天猫-->
+        <item value="com.tmall.wireless" />
+        <!--聚美优品-->
+        <item value="com.jm.android.jumei" />
+        <!--苏宁易购-->
+        <item value="com.suning.mobile.ebuy" />
+        <!--当当-->
+        <item value="com.dangdang.buy2" />
+        <!--喜马拉雅FM-->
+        <item value="com.ximalaya.ting.android" />
+        <!--酷我音乐-->
+        <item value="cn.kuwo.player" />
+        <!--网易云音乐-->
+        <item value="com.netease.cloudmusic" />
+        <!--咪咕音乐-->
+        <item value="cmccwm.mobilemusic" />
+        <!--虾米音乐-->
+        <item value="fm.xiami.main" />
+        <!--百度音乐-->
+        <item value="com.ting.mp3.android" />
+        <!--多米音乐-->
+        <item value="com.duomi.android" />
+        <!--qq音乐-->
+        <item value="com.tencent.qqmusic" />
+        <!--酷狗音乐-->
+        <item value="com.kugou.android" />
+        <!--唱吧-->
+        <item value="com.changba" />
+        <!--美拍-->
+        <item value="com.meitu.meipaimv" />
+        <!--逗拍-->
+        <item value="com.dou_pai.DouPai" />
+        <!--小咖秀-->
+        <item value="com.yixia.xiaokaxiu" />
+        <!--网易新闻-->
+        <item value="com.netease.newsreader.activity" />
+        <!--今日头条-->
+        <item value="com.ss.android.article.news" />
+        <!--凤凰新闻-->
+        <item value="com.ifeng.news2" />
+        <!--央视新闻-->
+        <item value="cn.cntvnews" />
+        <!--新浪新闻-->
+        <item value="com.sina.news" />
+        <!--搜狐新闻-->
+        <item value="com.sohu.newsclient" />
+        <!--百度新闻-->
+        <item value="com.baidu.news" />
+        <!--腾讯新闻-->
+        <item value="com.tencent.news" />
+        <!--新闻资讯-->
+        <item value="com.yidian.xiaomi" />
+        <!--参考消息-->
+        <item
+            value="com.cutt.zhiyue.android.app236492" />
+        <!--墨迹天气-->
+        <item value="com.moji.mjweather" />
+        <!--我查查-->
+        <item value="com.wochacha" />
+        <!--美食杰-->
+        <item value="com.jesson.meishi" />
+        <!--腾讯手机管家-->
+        <item value="com.tencent.qqpimsecure" />
+        <!--WiFi万能钥匙-->
+        <item value="com.snda.wifilocating" />
+        <!--百度云-->
+        <item value="com.baidu.netdisk" />
+        <!--Wps office-->
+        <item value="cn.wps.moffice_eng" />
+        <!--云之家-->
+        <item value="com.kdweibo.client" />
+        <!--印象笔记-->
+        <item value="com.evernote" />
+        <!--珍爱网-->
+        <item value="com.zhenai.android" />
+        <!--微信-->
+        <item value="com.tencent.mm" />
+        <!--QQ-->
+        <item value="com.tencent.mobileqq" />
+        <!--百度贴吧-->
+        <item value="com.baidu.tieba" />
+        <!--阿里通网络电话-->
+        <item value="com.alicall.androidzb" />
+        <!--短信宝典-->
+        <item value="net.joydao.spring2011" />
+        <!--和通讯录-->
+        <item value="com.chinamobile.contacts.im" />
+        <!--呼死你-->
+        <item value="com.example.callsomebodydead" />
+        <!--触宝电话-->
+        <item value="com.cootek.smartdialer" />
+        <!--高德导航-->
+        <item value="com.autonavi.xmgd.navigator" />
+        <!--高德地图-->
+        <item value="com.autonavi.minimap" />
+        <!--凯立德导航-->
+        <item value="cld.navi.mainframe" />
+        <!--百度地图-->
+        <item value="com.baidu.BaiduMap" />
+        <!--搜狗地图-->
+        <item value="com.sogou.map.android.maps" />
+        <!--饿了么-->
+        <item value="me.ele" />
+        <!--美团外卖-->
+        <item value="com.sankuai.meituan.takeoutnew" />
+        <!--百度外卖-->
+        <item value="com.baidu.lbs.waimai" />
+        <!--春雨计步器-->
+        <item value="me.chunyu.Pedometer" />
+        <!--乐动力-->
+        <item value="cn.ledongli.ldl" />
+        <!--薄荷-->
+        <item value="com.boohee.one" />
+        <!--有道词典-->
+        <item value="com.youdao.dict" />
+        <!--金山词霸-->
+        <item value="com.kingsoft" />
+        <!--百度翻译-->
+        <item value="com.baidu.baidutranslate" />
+        <!--TED演讲-->
+        <item value="com.ted.android" />
+        <!--超级课程表-->
+        <item
+            value="com.xtuone.android.syllabus" />
+        <!--大姨妈-->
+        <item value="com.yoloho.dayima" />
+        <!--宝宝树孕育-->
+        <item value="com.babytree.apps.pregnancy" />
+        <!--亲宝宝-->
+        <item value="com.dw.btime" />
+        <!--开心消消乐-->
+        <item value="com.happyelements.AndroidAnimal.qq" />
+        <!--神庙逃亡2-->
+        <item value="com.imangi.templerun2" />
+        <!--地铁跑酷-->
+        <item value="com.kiloo.subwaysurf" />
+        <!--Popstar-->
+        <item value="com.brianbaek.popstar" />
+        <!--QQ阅读-->
+        <item value="com.qq.reader" />
+        <!--咪咕听书-->
+        <item value="com.listencp.client" />
+        <!--快看漫画-->
+        <item value="com.kuaikan.comic" />
+        <!--书旗小说-->
+        <item value="com.shuqi.controller" />
+        <!--掌阅iReader-->
+        <item value="com.chaozh.iReaderFree" />
+</name-list>
+
+<!-- all apps in the "full-screen" is white-list. -->
+<name-list name="full-screen" type="white-list">
+    <item value="cn.nubia.applockmanager"/>
+    <item value="cn.nubia.control"/>
+    <item value="com.android.camera/.pano.PanoramaActivity"/>
+    <item value="cn.nubia.freesnapshots"/>
+    <item value="cn.nubia.splitscreen.home/.SplitScreenWelcome"/>
+    <item value="cn.nubia.deskclock.preset/cn.nubia.deskclock.activity.SleepClockActivity"/>
+    <item value="com.android.settings/.Settings"/>
+    <item value="com.android.settings/.SubSettings"/>
+    <item value="com.android.settings/.ConfirmLockPattern"/>
+    <item value="com.android.settings/.ChooseLockPattern"/>
+    <item value="com.android.settings/.RelationUnlockFingerPrint"/>
+    <item value="com.android.settings/.ChangeDeskLayActivity"/>
+    <item value="com.android.settings/.ConfirmLockPattern$InternalActivity"/>
+    <item value="com.android.settings/.ConfirmLockPIN$InternalActivity"/>
+    <item value="com.android.settings/.ConfirmLockPassword$InternalActivity"/>
+    <item value="com.android.settings/.fingerprint.FingerprintSettings"/>
+    <item value="com.android.settings/.fingerprint.FingerprintIdentifyActivity"/>
+    <item value="com.android.settings/.fingerprint.FingerprintEnrollEnrolling"/>
+    <item value="com.android.settings/.fingerprint.FingerprintEnrollFinish"/>
+    <item value="com.android.settings/.ChooseLockGeneric"/>
+    <item value="com.android.settings/.Settings$WifiSettingsActivity"/>
+    <item value="com.android.settings/.wifi.WifiPickerActivity"/>
+    <item value="com.android.settings/.Settings$BluetoothSettingsActivity"/>
+    <item value="com.android.settings/.SubSettings$BluetoothSubSettings"/>    
+    <item value="com.android.settings/.accessibility.RedPacketSettingActivity"/>
+    <item value="com.android.settings/.accessibility.RedPacketHelpActivity"/> 
+    <item value="com.android.settings/.CredentialStorage"/>	
+    <item value="com.android.settings/.vpn2.VpnSettingsAddActivity"/> 
+    <item value="com.android.settings/.bluetooth.BluetoothPairingDialog"/> 
+    <item value="com.android.settings/.Settings$SuperSnapSettingsActivity"/>
+    <item value="com.android.settings/.deviceinfo.UsbModeChooserActivity"/> 
+    <item value="cn.nubia.edge/.instruct.GuideActivity"/>   	
+    <item value="cn.nubia.accounts"/>
+    <item value="cn.nubia.fingerprints/.TutorialActivity"/>
+    <item value="cn.nubia.fingerprints/.PrintsActivity"/>
+    <item value="com.nubia.settings.turboshow.TurboManagementActivity"/>
+    <item value="com.android.settings.smartkey.SmartkeyVolumeSettings"/>
+    <item value="com.android.settings/.notificationcenter.ui.QSTileSwitchActivity"/>
+    <item value="com.android.settings/.ImageEnhanceSettings2"/>
+    <item value="com.android.settings/.ImageEnhanceSettings3"/>
+    <item value="com.yibasan.lizhifm/.activities.LockScreenActivity"/>
+    <item value="com.tencent.radio/.playback.ui.PlayerActivity"/>
+    <item value="InternetRadio.all/.SingleLockScreenActivity"/>
+    <item value="com.android.packageinstaller"/>
+    <item value="com.google.android.packageinstaller"/>
+    <item value="com.android.camera/.CameraLauncher"/>
+    <item value="com.android.camera/.Camera"/>
+    <item value="com.powermo.geekshow/.MainActivity"/>
+    <item value="cn.nubia.factory"/>
+    <item value="cn.nubia.scanner"/>
+    <item value="cn.nubia.apps"/>
+    <item value="cn.nubia.advanced"/>
+    <item value="com.android.incallui/.InCallActivity"/>
+    <item value="com.android.systemui"/>
+    <item value="cn.nubia.HouseLauncher.Local"/>
+    <item value="com.android.phone/.EmergencyDialer"/>
+    <item value="cn.nubia.deskclock.preset/cn.nubia.deskclock.SleepClockActivity"/>
+    <item value="cn.nubia.v5light.preset"/>
+    <item value="com.android.camera/com.android.gallery3d.app.Gallery"/>
+    <item value="cn.nubia.zbiglauncher.preset"/>
+    <item value="cn.nubia.supersnap"/>
+    <item value="cn.nubia.deskclock.preset/cn.nubia.deskclock.countdown.CountdownAlert"/>
+    <item value="cn.nubia.deskclock.preset/cn.nubia.deskclock.activity.AlarmAlertFullScreen"/>
+    <item value="com.tencent.mobileqq/com.tencent.av.ui.AVActivity"/>
+    <item value="com.tencent.qqmusic/.business.lockscreen.LockScreenActivity"/>
+    <item value="com.kugou.android/.app.lockscreen.LockScreenActivity"/>
+    <item value="com.tencent.qqmusic/.business.lockscreen.LockScreenActivity"/>
+    <item value="com.duomi.android/.DMMainActivity"/>
+    <item value="com.yuedong.sport/.main.ScreenActivity"/>
+    <item value="com.netease.cloudmusic/.activity.LockScreenActivity"/>
+    <item value="com.ting.mp3.android/com.baidu.music.ui.lockscreen.LockScreenActivity"/>
+    <item value="fm.xiami.main/.business.lockscreen.ui.CustomLockScreenActivity"/>
+    <item value="com.tencent.mobileqq/.activity.QQLSActivity"/>
+    <item value="com.tencent.mm/.plugin.scanner.ui.BaseScanUI"/>
+    <item value="cn.nubia.flycow"/>
+    <item value="com.redteamobile.roaming"/>
+    <item value="cn.nubia.gallerylockscreen/.settings.SettingsActivity"/>
+    <item value="cn.nubia.smartface/.settings.SmartFaceSettingActivity"/>
+    <item value="cn.nubia.sensor/.SensorActivity$CompassCaliActivity"/>
+    <item value="cn.nubia.sensor/.CompassCaliSuccessActivity"/>
+    <item value="cn.nubia.launcher/com.android.launcher3.SimpleWallpaperActivity"/>
+    <item value="cn.nubia.launcher/com.android.launcher3.SettingWallpaperActivity"/>
+    <item value="com.android.wallpapercropper/.WallpaperCropActivity"/>
+    <item value="com.android.wallpapercropper/com.android.settingpreview.SettingWallpaperActivity"/>
+    <item value="com.jingdong.app.mall/com.jingdong.lib.zxing.client.android.CaptureActivity"/>
+    <item value="com.jingdong.app.mall/com.jd.lib.scan.lib.zxing.client.android.CaptureActivity"/>
+    <item value="com.android.settings/.notificationcenter.ui.NotificationCenterManagementActivity"/>
+    <item value="com.android.settings/.notificationcenter.ui.NotificationCenterSettingsActivity"/>
+    <item value="com.android.settings/.notificationcenter.ui.MultiSettingsActivity"/>
+    <item value="com.android.camera/com.android.specification.SpecificationActivity"/>
+    <item value="com.android.stk/.StkDialogActivity"/>
+    <item value="com.tencent.peng"/>
+    <item value="com.tencent.tmgp.carrot3"/>
+    <item value="tv.danmaku.bili"/>
+    <item value="com.tencent.mm/.plugin.webview.ui.tools.OAuthUI"/>
+</name-list>
+
+<!-- all apps in the "never-scale" is white-list. -->
+<name-list name="never-scale" type="white-list">
+    <item value="cn.nubia.minilauncher/com.android.launcher3.Launcher"/>
+    <item value="cn.nubia.splitscreen.home"/>
+</name-list>
+
+<!-- all apps in the "keep-alive" is white-list. -->
+<name-list name="keep-alive" type="white-list">
+    <item value="cn.nubia.minilauncher"/>
+    <item value="com.powermo.SmartBar"/>
+</name-list>
+
+<!-- all apps in the "update-focus" is black-list. -->
+<name-list name="update-focus" type="black-list">
+    <item value="com.popcap.pvz2cthdwdj/com.popcap.pvz2cthdwdj.SexyAppActivity" />
+    <item value="com.popcap.pvz2wdj/com.popcap.pvz2wdj.SexyAppActivity" />
+</name-list>
+
+<!-- all apps in the "single-instance" is white-list. -->
+<name-list name="single-instance" type="white-list">
+    <item value="cn.nubia.photoeditor/com.android.gallery3d.filtershow.FilterShowActivity" />
+    <item value="cn.nubia.soundrecorder.preset/cn.nubia.soundrecorder.SoundRecorderBrowserActivity" />
+</name-list>
+
+<!-- all apps in the "use-local-conf" is white-list. -->
+<name-list name="use-local-conf" type="white-list">
+    <item value="com.android.facelock"/>
+    <item value="cn.nubia.minilauncher"/>
+</name-list>
+
+<!-- all apps in the "home-activity" is white-list. -->
+<name-list name="home-activity" type="white-list">
+    <item value="android/cn.nubia.server.power.ShutdownAniActivity"/>
+</name-list>
+
+<!-- all things hidden when "inputmethod show" is white-list. -->
+<name-list name="hidden-when-show-ime" type="white-list">
+     <item value="com.powermo.SmartBar/DragDialog"/>
+	 <item value="com.powermo.SmartBar/TipDialog"/>
+</name-list>
+
+</powermo-setting>
+

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+
+<policy>
+    <inbox-package name="com.tencent.mobileqq" />
+    <inbox-package name="com.tencent.mm" />
+    <restricted-package name="com.android.systemui" />
+    <restricted-package name="com.android.launcher3" />
+    <restricted-package name="cn.nubia.minilauncher" />
+</policy>

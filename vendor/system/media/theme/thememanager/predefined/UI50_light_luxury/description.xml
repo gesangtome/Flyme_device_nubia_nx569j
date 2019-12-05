@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NUBIAUI-Theme>
+
+    <title>nubia theme(UI50 Light Luxury)</title>
+
+    <title_cn>5.0水岸轻奢</title_cn>
+
+    <author>nubia团队</author>
+
+    <versionName>1.0.0</versionName>
+
+    <description>脱俗不染，尽享品质生活。水岸轻奢，nubia智能手机官方主题，希望你喜欢。</description>
+
+    <updateInfo>null</updateInfo>
+
+    <category>简约</category>
+
+    <tag>官方，大气，品质</tag>
+
+    <price>0</price>
+
+    <screen>FHD</screen>
+
+    <themeGeneration>1</themeGeneration>
+
+    <source>努比亚技术有限公司</source>
+
+    <author_id>wang.qian6@zte.com.cn</author_id>
+
+    <edit_date>2017-05-04</edit_date>
+
+	<associate_font>nubia轻奢字体</associate_font>
+
+    <icon_unity>true</icon_unity>
+
+    <is_classic>true</is_classic>
+
+</NUBIAUI-Theme>

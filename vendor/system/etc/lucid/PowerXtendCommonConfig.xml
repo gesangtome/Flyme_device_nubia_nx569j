@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PowerXtend_common>
+  <MeasurementConfiguration>
+    <BatteryLevel>
+      <file>/sys/class/power_supply/battery/capacity</file>
+      <ratio>1</ratio>
+      <average>1</average>
+      <hysteresis>0</hysteresis>
+      <samplingFrequency>10</samplingFrequency>
+    </BatteryLevel>
+    <BatteryTemp>
+      <file>/sys/class/power_supply/battery/temp</file>
+      <ratio>0.1</ratio>
+      <average>1</average>
+      <hysteresis>0</hysteresis>
+      <samplingFrequency>10</samplingFrequency>
+    </BatteryTemp>
+    <CpuTemp>
+      <file>/sys/devices/virtual/thermal/thermal_zone2/temp</file>
+      <ratio>1</ratio>
+      <average>10</average>
+      <hysteresis>2</hysteresis>
+      <samplingFrequency>1</samplingFrequency>
+    </CpuTemp>
+  </MeasurementConfiguration>
+  <GuiPackageName>cn.nubia.security2</GuiPackageName>
+  <dpi>400</dpi>
+  <default_log_level>0</default_log_level>
+  <ICE_Slider_Stops>5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95</ICE_Slider_Stops>
+  <regex_bl>
+    <app_regex name="place\.Holder">1</app_regex>
+  </regex_bl>
+  <user_table_path>/data/misc/user/0/</user_table_path>
+  <priority_black_list>placeHolder placeHolder</priority_black_list>
+  <prefix_bl>placeHolder placeHolder2</prefix_bl>
+  <max_brightness>255</max_brightness>
+  <multi_window_layer>FocusedStackFrame</multi_window_layer>
+  <gamma_coef_a>10000</gamma_coef_a>
+  <gamma_coef_b>10000</gamma_coef_b>
+  <gamma_coef_c>0</gamma_coef_c>
+  <soc>MSM8976</soc>
+  <ui_package_name>cn.nubia.launcher</ui_package_name>
+</PowerXtend_common>

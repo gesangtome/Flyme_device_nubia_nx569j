@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NUBIAUI-Theme>
+
+    <title>nubia theme(UI50 Fashion)</title>
+
+    <title_cn>5.0缤纷潮流</title_cn>
+
+    <author>nubia团队</author>
+
+    <versionName>1.0.0</versionName>
+
+    <description>时尚潮流，只为独一无二的你。缤纷潮流，nubia智能手机官方主题，希望你喜欢。</description>
+
+    <updateInfo>null</updateInfo>
+
+    <category>简约</category>
+
+    <tag>官方，大气，品质</tag>
+
+    <price>0</price>
+
+    <screen>FHD</screen>
+
+    <themeGeneration>1</themeGeneration>
+
+    <source>努比亚技术有限公司</source>
+
+    <author_id>wang.qian6@zte.com.cn</author_id>
+
+    <edit_date>2017-05-04</edit_date>
+
+	<associate_font>nubia潮流字体</associate_font>
+
+    <icon_unity>true</icon_unity>
+
+    <is_classic>true</is_classic>
+
+</NUBIAUI-Theme>

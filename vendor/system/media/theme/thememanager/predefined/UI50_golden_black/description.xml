@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NUBIAUI-Theme>
+
+    <title>UI50 Golden Black</title>
+
+    <title_cn>5.0黑金传奇</title_cn>
+
+    <author>nubia团队</author>
+
+    <versionName>1.0.0</versionName>
+
+    <description>黑金极致，彰显华彩人生。黑金传奇，nubia智能手机官方主题，希望你喜欢。</description>
+
+    <updateInfo>null</updateInfo>
+
+    <category>简约</category>
+
+    <tag>官方，大气，品质</tag>
+
+    <price>0</price>
+
+    <screen>FHD</screen>
+
+    <themeGeneration>1</themeGeneration>
+
+    <source>努比亚技术有限公司</source>
+
+    <author_id>wang.qian6@zte.com.cn</author_id>
+
+    <edit_date>2017-05-04</edit_date>
+
+	<associate_font>nubia商务字体</associate_font>
+
+    <is_classic>true</is_classic>
+
+    <icon_unity>true</icon_unity>
+
+</NUBIAUI-Theme>

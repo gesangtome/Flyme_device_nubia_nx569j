@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+ <library name="nubia-tab"
+          file="/system/framework/nubia-tab.jar"/>
+</permissions>

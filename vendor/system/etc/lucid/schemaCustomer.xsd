@@ -1,0 +1,218 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:element name="client" type="propertiesType" />
+
+<xsd:complexType name="propertiesType">
+    <xsd:all>
+        <xsd:element name="default">
+            <xsd:complexType>
+                <xsd:complexContent>
+                <xsd:restriction base="multiSourcePropertiesType">
+                    <xsd:all>
+                        <xsd:element name="power_states"  type="powerStatesUnion"/>
+                        <xsd:element name="touch_holdoff" type="holdoffsType" minOccurs="0"/>
+                        <xsd:element name="touch_velocity_threshold" type="touch_velocity_threshold_type" minOccurs="0" maxOccurs="1"/>
+                        <xsd:element name="tdelay"  type="int0to20kinclusive" minOccurs="0" maxOccurs="1"/>
+                        <xsd:element name="ButtonUpBehavior"  type="ButtonUpBehaviorType" minOccurs="0" maxOccurs="1"/>
+                        <xsd:element name="video_record_id"  type="videoRecordId" minOccurs="0" maxOccurs="1"/>
+                        <xsd:element name="touch_psup"  type="powerLevelType" minOccurs="0" maxOccurs="1"/>
+                        <xsd:element name="ice_enabled" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                        <xsd:element name="Iris_delay" minOccurs="0" maxOccurs="1">
+                            <xsd:simpleType>
+                                <xsd:restriction base="xsd:integer">
+                                    <xsd:minInclusive value="0"/>
+                                    <xsd:maxInclusive value="99"/>
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:element>
+                    </xsd:all>
+                </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="apps" type="appsType" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="auto_mode" type="xsd:boolean"/>
+        <xsd:element name="state" type="powerLevelType"/>
+        <xsd:element name="backlightAnimationOn" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="backlightAnimationStepSize" type="int0to20kinclusive" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="iris_factor" type="int50to150" minOccurs="0" maxOccurs="1"/>
+    </xsd:all>
+</xsd:complexType>
+
+<xsd:complexType name="appsType">
+    <xsd:sequence>
+        <xsd:element name="app" minOccurs="0" maxOccurs="unbounded" type="appType"/>
+    </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="appType">
+  <xsd:complexContent>
+    <xsd:extension base="multiSourcePropertiesType">
+      <xsd:attribute name="name" type="xsd:string" use="required" />
+    </xsd:extension>
+  </xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="multiSourcePropertiesType">
+    <xsd:all>
+        <xsd:element name="power_states"  type="powerStatesUnion" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="touch_holdoff" type="holdoffsType" minOccurs="0"/>
+        <xsd:element name="touch_velocity_threshold" type="touch_velocity_threshold_type" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="tdelay"  type="int0to20kinclusive" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="ButtonUpBehavior"  type="ButtonUpBehaviorType" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="video_record_id"  type="videoRecordId" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="touch_psup"  type="powerLevelType" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="ice_enabled" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="Iris_delay" minOccurs="0" maxOccurs="1">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:minInclusive value="0"/>
+                    <xsd:maxInclusive value="99"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+    </xsd:all>
+</xsd:complexType>
+
+
+<xsd:complexType name="powerStatesUnion">
+    <xsd:all>
+        <xsd:element name="normal_save" type="powerStateType" />
+        <xsd:element name="high_save" type="powerStateType" />
+        <xsd:element name="ultra_save" type="powerStateType" />
+    </xsd:all>
+</xsd:complexType>
+
+<xsd:complexType name="powerStateType">
+    <xsd:all>
+        <xsd:element name="ps_param" type="powerLevelType" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="touch_enable" type="xsd:boolean" default="true" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="touch_ps_param" type="powerLevelType" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="ice_param" minOccurs="0" maxOccurs="1">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:minInclusive value="0"/>
+                    <xsd:maxInclusive value="99"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="iris_param_gp" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="iris_param_fs" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:all>
+</xsd:complexType>
+
+<xsd:complexType name="videoRecordId">
+    <xsd:sequence>
+        <xsd:element name="video_rec_en" type="xsd:boolean"/>
+        <xsd:element name="ps_record" type="powerLevelType"/>
+        <xsd:element name="record_identification" type="recIdType">
+        </xsd:element>
+    </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="recIdType">
+    <xsd:sequence>
+        <xsd:element name="start_api" type="EnumVideoStartRecAPItype"/>
+        <xsd:element name="stop_api" type="EnumVideoStopRecAPItype"/>
+    </xsd:sequence>
+</xsd:complexType>
+
+<xsd:simpleType name="EnumVideoStartRecAPItype">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="startPreview"/>
+        <xsd:enumeration value="startRecording"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="EnumVideoStopRecAPItype">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="stopPreview"/>
+        <xsd:enumeration value="stopRecording"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="powerLevelType">
+    <xsd:restriction base="xsd:integer">
+        <xsd:minInclusive value="0"/>
+        <xsd:maxInclusive value="4"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:complexType name="touch_velocity_threshold_type">
+    <xsd:all>
+        <xsd:element name="slow_med" type="int0to20k"/>
+        <xsd:element name="med_fast" type="int0to20k"/>
+    </xsd:all>
+</xsd:complexType>
+
+<xsd:complexType name="holdoffsType">
+    <xsd:all>
+        <xsd:element name="motion" type="motionHoldoffs" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="touch_hup" type="int0to20k" minOccurs="0" maxOccurs="1"/>
+    </xsd:all>
+</xsd:complexType>
+
+<xsd:complexType name="motionHoldoffs">
+    <xsd:all>
+        <xsd:element name="motion_slow" type="int0to20k"/>
+        <xsd:element name="motion_medium" type="int0to20k"/>
+        <xsd:element name="motion_fast" type="int0to20k"/>
+    </xsd:all>
+</xsd:complexType>
+
+<xsd:complexType name="ButtonUpBehaviorType">
+    <xsd:sequence>
+        <xsd:element name="default" type="xsd:boolean"/>
+        <xsd:element name="key_event" type="KeyEventType" minOccurs="0" maxOccurs="unbounded">
+        </xsd:element>
+    </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="KeyEventType">
+    <xsd:simpleContent>
+        <xsd:extension base="xsd:boolean">
+            <xsd:attribute name="id" type="keyIdType" use="required"/>
+        </xsd:extension>
+    </xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:simpleType name="strList">
+    <xsd:list itemType="xsd:string"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="int0to20k">
+    <xsd:restriction base="xsd:integer">
+        <xsd:minExclusive value="0"/>
+        <xsd:maxInclusive value="20000"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="int0to20kinclusive">
+    <xsd:restriction base="xsd:integer">
+        <xsd:minInclusive value="0"/>
+        <xsd:maxInclusive value="20000"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="int0to1000">
+    <xsd:restriction base="xsd:integer">
+        <xsd:minExclusive value="0"/>
+        <xsd:maxInclusive value="1000"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="keyIdType">
+    <xsd:restriction base="xsd:integer">
+        <xsd:minInclusive value="0"/>
+        <xsd:maxInclusive value="999"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="int50to150">
+    <xsd:restriction base="xsd:integer">
+        <xsd:minExclusive value="50"/>
+        <xsd:maxInclusive value="150"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+</xsd:schema>

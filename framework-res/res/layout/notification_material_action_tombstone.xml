@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button android:enabled="false" android:textSize="16.0sp" android:textColor="#3bffffff" android:ellipsize="end" android:gravity="center" android:id="@id/action0" android:layout_width="120.0dip" android:layout_height="48.0dip" android:singleLine="true" android:layout_weight="1.0" android:alpha="0.5" style="@android:style/Widget.Material.Light.Button.Borderless.Small"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

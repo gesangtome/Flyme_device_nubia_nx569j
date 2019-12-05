@@ -1,0 +1,191 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:element name="PowerXtend_common" type="propertiesType" />
+
+<xsd:complexType name="propertiesType">
+    <xsd:all>
+        <xsd:element name="MeasurementConfiguration" type="MeasurementConfigurationType"/>
+        <xsd:element name="GuiPackageName">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="256"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="dpi">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:minInclusive value="0"/>
+                    <xsd:maxInclusive value="10000"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="default_log_level">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:minInclusive value="0"/>
+                    <xsd:maxInclusive value="10"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="max_brightness">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:minInclusive value="1"/>
+                    <xsd:maxInclusive value="65536"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="multi_window_layer">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="256"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="gamma_coef_a">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:minInclusive value="10000"/>
+                    <xsd:maxInclusive value="65536"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="gamma_coef_b">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:minInclusive value="10000"/>
+                    <xsd:maxInclusive value="65536"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="gamma_coef_c">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:minInclusive value="0"/>
+                    <xsd:maxInclusive value="65536"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="user_table_path" minOccurs="0" maxOccurs="1">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="1024"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+         <xsd:element name="soc">
+             <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="256"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="ui_package_name">
+             <xsd:simpleType>
+                 <xsd:restriction base="xsd:string">
+                      <xsd:pattern value="[a-zA-Z0-9][a-zA-Z0-9_.]*"/>
+                 </xsd:restriction>
+        </xsd:simpleType>
+         </xsd:element>
+        <xsd:element name="ICE_Slider_Stops" type="ICE_Slider_StopsType" minOccurs="0"/>
+        <xsd:element name="priority_black_list" type="strList" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="prefix_bl" type="strList" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="regex_bl" type="regex_bl_type" minOccurs="0" maxOccurs="1"/>
+    </xsd:all>
+</xsd:complexType>
+
+<xsd:complexType name="MeasurementConfigurationType">
+    <xsd:all>
+        <xsd:element name="BatteryLevel" type="configurationType"/>
+        <xsd:element name="BatteryTemp" type="configurationType" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="CpuTemp" type="configurationType" minOccurs="0" maxOccurs="1"/>
+    </xsd:all>
+</xsd:complexType>
+
+<xsd:complexType name="configurationTypeFileOnly">
+    <xsd:all>
+        <xsd:element name="file">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="1024"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+    </xsd:all>
+</xsd:complexType>
+
+<xsd:complexType name="configurationType">
+    <xsd:all>
+        <xsd:element name="file">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="1024"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="ratio">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:decimal">
+                     <xsd:minInclusive value="0.0"/>
+                     <xsd:maxInclusive value="1.0"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="average">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:minInclusive value="0"/>
+                    <xsd:maxInclusive value="1000"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="hysteresis">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:minInclusive value="0"/>
+                    <xsd:maxInclusive value="100"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="samplingFrequency">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:minInclusive value="0"/>
+                    <xsd:maxInclusive value="120"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>
+    </xsd:all>
+</xsd:complexType>
+
+<xsd:simpleType name="ICE_Slider_StopsType">
+    <xsd:list itemType="sliderStop"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="sliderStop">
+    <xsd:restriction base ="xsd:integer">
+        <xsd:minInclusive value="1"/>
+        <xsd:maxInclusive value="98"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="strList">
+    <xsd:list itemType="xsd:string"/>
+</xsd:simpleType>
+
+<xsd:complexType name="regex_bl_type">
+    <xsd:sequence>
+        <xsd:element name="app_regex" maxOccurs="unbounded" type="regexType"/>
+    </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="regexType">
+    <xsd:simpleContent>
+        <xsd:extension base="xsd:boolean">
+            <xsd:attribute name="name" type="xsd:string" use="required"/>
+        </xsd:extension>
+    </xsd:simpleContent>
+</xsd:complexType>
+
+</xsd:schema>
